@@ -8,6 +8,13 @@ var app = {
     option: ['one','two']
 }
 
+var templateThree = (
+    <div>
+    {app.subtitle ? <p>{app.subtitle}</p>: false}
+    {app.option.length>0 ? <div><p>Here are your option :</p><ol>{app.option.map((option)=> <li key={option}>{option}</li>)}</ol></div> : false}
+    </div>
+    )
+
 var template = (
   <div>
     <h1> Indecision App V 1.0</h1>
@@ -42,4 +49,4 @@ var tampleteTwo = (
 
 var appRoot = document.getElementById("app");
 
-ReactDOM.render(tampleteTwo, appRoot);
+ReactDOM.render(templateThree, appRoot);
