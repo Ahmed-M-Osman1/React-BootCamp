@@ -15,7 +15,7 @@ const renderFunction = () =>{
     const vDOM = (<div>
         <h1>Visible Toggle</h1>
         <button onClick={BTNFunction}>{showState.showState? 'Hide detail':'Show  detail'}</button>
-        <p>{showState.showState? 'There Is a lot of detail Here':false}</p>
+        {showState.showState && <p>There Is a lot of detail Here</p>}
         <div></div>
         </div>)
     ReactDOM.render(vDOM,appRoot) 

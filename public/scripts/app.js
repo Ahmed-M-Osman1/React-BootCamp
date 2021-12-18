@@ -1,32 +1,40 @@
 "use strict";
 
-console.log("App.js is running!"); // JSX - JavaScript XML
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var app = {
-  title: "Indecision App",
-  subtitle: 'Put ',
-  option: ['one', 'two']
-};
-var templateThree = /*#__PURE__*/React.createElement("div", null, app.subtitle ? /*#__PURE__*/React.createElement("p", null, app.subtitle) : false, app.option.length > 0 ? /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", null, "Here are your option :"), /*#__PURE__*/React.createElement("ol", null, app.option.map(function (option) {
-  return /*#__PURE__*/React.createElement("li", {
-    key: option
-  }, option);
-}))) : false);
-var template = /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h1", null, " Indecision App V 1.0"), /*#__PURE__*/React.createElement("p", null, "this is paragraph"), /*#__PURE__*/React.createElement("ol", null, /*#__PURE__*/React.createElement("li", null, "Item One"), /*#__PURE__*/React.createElement("li", null, "Item Two")));
-var user = {
-  name: 'Ahmed',
-  age: 28,
-  location: 'Cairo'
-};
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function getLocation(location) {
-  if (location) {
-    return /*#__PURE__*/React.createElement("p", null, "Location: ", location);
-  } else {
-    return 'Unknown';
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+var Person = /*#__PURE__*/function () {
+  function Person() {
+    var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'Anonymous';
+    var age = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+
+    _classCallCheck(this, Person);
+
+    this.name = name;
+    this.age = age;
   }
-}
 
-var tampleteTwo = /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h1", null, user.name ? user.name : 'Anonymous'), user.age && user.age >= 18 && /*#__PURE__*/React.createElement("p", null, "Age: ", user.age), getLocation(user.location));
-var appRoot = document.getElementById("app");
-ReactDOM.render(tampleteTwo, appRoot);
+  _createClass(Person, [{
+    key: "getGretting",
+    value: function getGretting() {
+      return "Hi. I am ".concat(this.name, "!");
+    }
+  }, {
+    key: "getDescription",
+    value: function getDescription() {
+      return "".concat(this.name, " is ").concat(this.age, " year(s) old.");
+    }
+  }]);
+
+  return Person;
+}();
+
+var me = new Person('Ahmed Mamdouh', 26);
+console.log(me.getGretting());
+console.log(me.getDescription());
+var other = new Person();
+console.log(other.getGretting());
+console.log(other.getDescription());
