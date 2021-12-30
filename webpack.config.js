@@ -13,7 +13,14 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
         options: { presets: ["@babel/env", "@babel/preset-react"] },
-      },
+      },{
+        test: /\.s?css$/,
+        use: [ 
+          'style-loader', 
+          'css-loader',
+          'sass-loader'
+        ]
+      }
     ],
   },
   devtool: "eval-cheap-module-source-map",
